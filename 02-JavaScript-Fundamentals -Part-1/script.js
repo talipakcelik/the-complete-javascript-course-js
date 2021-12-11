@@ -147,3 +147,11 @@ if (age === 18) console.log("Ehliyet alabilirsin. (strict)")
 
 if (age == 18) console.log("Ehliyet alabilirsin. (loose)")
 
+
+const favori = prompt("Favori sayın nedir?");
+console.log(favori);
+console.log(typeof favori);
+
+if (favori == 23) {
+  console.log("23 çok güzel bir sayı.")
+}
