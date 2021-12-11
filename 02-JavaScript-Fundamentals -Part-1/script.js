@@ -148,13 +148,13 @@ if (age === 18) console.log("Ehliyet alabilirsin. (strict)")
 if (age == 18) console.log("Ehliyet alabilirsin. (loose)")
 
 
-const favori = prompt("Favori sayın nedir?");
-console.log(favori);
-console.log(typeof favori);
+// const favori = prompt("Favori sayın nedir?");
+// console.log(favori);
+// console.log(typeof favori);
 
-if (favori == 23) {
-  console.log("23 çok güzel bir sayı.")
-}
+// if (favori == 23) {
+//   console.log("23 çok güzel bir sayı.")
+// }
 
 /**************
 ****** 024 ****
@@ -169,3 +169,47 @@ if (ehliyetiVar && gozleriSaglikli && !yorgun) {
   console.log("Araba süremez.")
 }
 
+/**************
+****** 026 ****
+**************/
+
+const day = "çarşamba";
+
+switch (day) {
+  case "pazartesi": // day === "pazartesi"
+    console.log("Derse hazırlan.");
+    console.log("Sunuma hazırlan.");
+    break;
+  case "salı":
+    console.log("Ders videolarını izle.");
+    break;
+  case "çarşamba":
+  case "perşembe":
+    console.log("Kod egzersiz günü.");
+    break;
+  case "cuma":
+    console.log("Derse kayıt ol.");
+    break;
+  case "cumartesi":
+  case "pazar":
+    console.log("İstediğin gibi takıl.");
+    break;
+  default:
+    console.log("Böyle bir gün ismi yok!");
+}
+
+
+if (day === "pazartesi") {
+  console.log("Derse hazırlan.");
+  console.log("Sunuma hazırlan.");
+} else if (day === "salı") {
+  console.log("Ders videolarını izle.");
+} else if (day === "çarşamba" || day === "perşembe") {
+  console.log("Kod egzersiz günü.");
+} else if (day === "cuma") {
+  console.log("Derse kayıt ol.");
+} else if (day === "cumartesi" || day === "pazar") {
+  console.log("İstediğin gibi takıl.");
+} else {
+  console.log("Böyle bir gün ismi yok!");
+}
