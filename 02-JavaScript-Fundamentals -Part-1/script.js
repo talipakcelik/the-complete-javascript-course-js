@@ -155,3 +155,17 @@ console.log(typeof favori);
 if (favori == 23) {
   console.log("23 çok güzel bir sayı.")
 }
+
+/**************
+****** 024 ****
+**************/
+const ehliyetiVar = true; // A 
+const gozleriSaglikli = true; // B
+const yorgun = true; // C
+
+if (ehliyetiVar && gozleriSaglikli && !yorgun) {
+  console.log("Araba sürebilir.")
+} else {
+  console.log("Araba süremez.")
+}
+
