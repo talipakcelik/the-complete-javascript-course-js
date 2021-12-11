@@ -96,3 +96,21 @@ console.log(century)
 
 
 
+let a = 10
+b = 7 * a
+console.log(b)
+
+const max = 57
+const actual = max - 13
+const percentage = actual / max
+
+let apples = "2";
+let oranges = "3";
+
+// both values converted to numbers before the binary plus
+alert(+apples + +oranges);
+
+
+const inputYear = "1991";
+console.log(Number(inputYear), inputYear);
+console.log(inputYear + 18)
