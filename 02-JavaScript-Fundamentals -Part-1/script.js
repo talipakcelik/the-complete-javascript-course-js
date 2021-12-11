@@ -114,3 +114,19 @@ alert(+apples + +oranges);
 const inputYear = "1991";
 console.log(Number(inputYear), inputYear);
 console.log(inputYear + 18)
+
+console.log(String(23), 23);
+
+// const money = 100;
+// if (money) {
+//   console.log("Don't spend it all.");
+// } else {
+//   console.log("You should get a job!");
+// }
+
+const money = 0;
+if (money) {
+  console.log("Don't spend it all.");
+} else {
+  console.log("You should get a job!");
+}
