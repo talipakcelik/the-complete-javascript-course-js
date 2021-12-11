@@ -140,3 +140,10 @@ if (height) {
   console.log("Yükseklik tanımlanmamış.");
 }
 
+/*******022 */
+const age = 18;
+if (age === 18) console.log("Ehliyet alabilirsin. (strict)")
+
+
+if (age == 18) console.log("Ehliyet alabilirsin. (loose)")
+
