@@ -213,3 +213,19 @@ if (day === "pazartesi") {
 } else {
   console.log("Böyle bir gün ismi yok!");
 }
+
+
+/**************
+****** 028 ****
+**************/
+
+const age2 = 22;
+console.log(`${age2 >= 18 ? "wine 🍷" : "water 💧"} içmeyi severim.`)
+
+let drink2;
+if (age2 >= 18) {
+  drink2 = "wine 🍷";
+} else {
+  drink2 = "water 💧";
+}
+console.log(drink2);
