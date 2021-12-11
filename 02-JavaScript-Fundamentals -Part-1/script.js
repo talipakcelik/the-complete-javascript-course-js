@@ -108,7 +108,7 @@ let apples = "2";
 let oranges = "3";
 
 // both values converted to numbers before the binary plus
-alert(+apples + +oranges);
+// alert(+apples + +oranges);
 
 
 const inputYear = "1991";
@@ -130,3 +130,13 @@ if (money) {
 } else {
   console.log("You should get a job!");
 }
+
+
+let height;
+
+if (height) {
+  console.log("Yükseklik tanımlanmış.");
+} else {
+  console.log("Yükseklik tanımlanmamış.");
+}
+
