@@ -27,3 +27,25 @@ function meyveİmalatı(elma, portakal) {
 const yeniMeyveSuyu = meyveİmalatı(3, 4);
 console.log(yeniMeyveSuyu)
 console.log(meyveİmalatı(3, 8))
+
+/**********************
+ *****033 Functions****
+ **********************/
+
+
+function YaşHesaplama1(doğumyılı) {
+  return 2037 - doğumyılı;
+}
+
+const yaş1 = YaşHesaplama1(1991);
+
+
+/**/
+
+const YaşHesaplama2 = function (doğumyılı) {
+  return 2037 - doğumyılı;
+}
+
+const yaş2 = YaşHesaplama2(1995);
+
+console.log(yaş1, yaş2)
