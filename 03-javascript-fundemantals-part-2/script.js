@@ -74,13 +74,13 @@ console.log(yas3)
 
 ///
 
-const emeklilikHesaplama = (dogumYili, isim) => {
-  const yas = 2037 - dogumYili;
-  const emeklilik = 65 - yas;
-  return `${isim}, ${emeklilik} yıl sonra emekli olacak.`
-}
+// const emeklilikHesaplama = (dogumYili, isim) => {
+//   const yas = 2037 - dogumYili;
+//   const emeklilik = 65 - yas;
+//   return `${isim}, ${emeklilik} yıl sonra emekli olacak.`
+// }
 
-console.log(emeklilikHesaplama(1995, "Talip"))
+// console.log(emeklilikHesaplama(1995, "Talip"))
 
 
 ///
@@ -96,3 +96,35 @@ function meyveImalati(elma, portakal) {
 }
 
 console.log(meyveImalati(4, 2))
+
+///
+
+const yasHesaplama = function (dogumyili) {
+  return 2037 - dogumyili
+  // buraya return yas yazsam aynı mı olurdu acaba?
+}
+
+// const emeklilikHesaplama = function (dogumYili, isim) {
+//   const yas = yasHesaplama(dogumYili);
+//   const emeklilik = 65 - yas;
+//   return emeklilik;
+//   // return `${isim}, ${emeklilik} yıl sonra emekli olacak.`
+// }
+
+
+const emeklilikHesaplama = function (dogumYili, isim) {
+  const yas = yasHesaplama(dogumYili);
+  const emeklilik = 65 - yas;
+
+  if (emeklilik > 0) {
+    console.log(`${isim}, ${emeklilik} yıl sonra emekli olacak.`)
+    return emeklilik;
+  } else {
+    console.log(`${isim}, zaten emekli olmuşsunuz. 🎉`)
+    return -1
+  }
+
+  // return `${isim}, ${emeklilik} yıl sonra emekli olacak.`
+}
+
+console.log(emeklilikHesaplama(1950, "Talip"))
