@@ -184,3 +184,20 @@ if (friends.includes("Filiz")) {
   console.log(`Filiz isimli bir arkadaşın yok.`)
 }
 
+
+
+/***************************
+ *****043 dot vs bracket****
+ ***************************/
+
+const talip = {
+  isim: "Talip",
+  soyisim: "Akçelik",
+  age: 2021 - 1995,
+  job: "Öğrenci",
+  friends: ["Micheal", "Peter", "Steven"]
+};
+
+console.log(`${talip.isim} has ${talip.friends.length} friends, and his best friend is called ${talip.friends[0]}.`)
+
+
