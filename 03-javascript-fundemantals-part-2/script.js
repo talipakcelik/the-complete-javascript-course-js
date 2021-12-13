@@ -128,3 +128,23 @@ const emeklilikHesaplama = function (dogumYili, isim) {
 }
 
 console.log(emeklilikHesaplama(1950, "Talip"))
+
+
+const friend1 = "Tugay";
+const friend2 = "Anıl";
+const friend3 = "Burak";
+
+const friends = ["Tugay", "Anıl", "Burak"];
+console.log(friends);
+
+const year = new Array(1991, 1995, 2001, 2005);
+console.log(year);
+
+console.log(friends[0]);
+console.log(friends[1]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1])
+
+friends[2] = "Tuba";
+console.log(friends);
