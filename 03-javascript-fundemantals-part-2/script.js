@@ -148,3 +148,39 @@ console.log(friends[friends.length - 1])
 
 friends[2] = "Tuba";
 console.log(friends);
+
+/**********************
+ *****040 basic array operation****
+ **********************/
+
+
+const friends2 = ["Tugay", "Anıl", "Burak", "John"];
+
+friends2[4] = "Nazmi";
+console.log(friends2)
+
+
+const newLength = friends2.push("İlker");
+console.log(newLength)
+console.log(friends2)
+
+friends.unshift("Kâzım");
+
+
+console.log(friends)
+friends.pop();
+const silinenEleman = friends.pop();
+console.log(silinenEleman);
+console.log(friends);
+
+friends.shift();
+console.log(friends); // sadece tugay kaldı. 
+
+console.log(friends.indexOf("Tugay")); // 0
+
+if (friends.includes("Filiz")) {
+  console.log(`Filiz isimli bir arkadaşın var.`)
+} else {
+  console.log(`Filiz isimli bir arkadaşın yok.`)
+}
+
