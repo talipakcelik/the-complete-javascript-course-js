@@ -1,7 +1,6 @@
 /****************
  ******032******
  ************///
-"use strict";
 
 let hasDriversLicense = false;
 const passTest = true;
@@ -201,3 +200,48 @@ const talip = {
 console.log(`${talip.isim} has ${talip.friends.length} friends, and his best friend is called ${talip.friends[0]}.`)
 
 
+/***************************
+ *****044 objects method****
+ ***************************/
+
+const talip2 = {
+  isim: "Talip",
+  soyisim: "Akçelik",
+  dogumYili: 1995,
+  job: "Öğrenci",
+  friends: ["Micheal", "Peter", "Steven"],
+  //
+  calcAge: function () {
+    return 2021 - this.dogumYili;
+  }
+
+};
+
+
+"use strict";
+"use strict";
+
+const talip3 = {
+  isim: "Talip",
+  soyisim: "Akçelik",
+  dogumYili: 1995,
+  job: "Öğrenci",
+  friends: ["Micheal", "Peter", "Steven"],
+  ehliyetiVarMi: true,
+  //
+  calcAge: function () {
+    this.age = 2021 - this.dogumYili;
+    return this.age;
+  },
+  //
+  // getSummary: function () {
+  //   return `${this.isim}, ${this.calcAge()} yaşında bir ${this.job}. Ayrıca ehliyeti ${this.ehliyetiVarMi ? "var" : "yok"
+  //     }.`
+  // }
+};
+
+// console.log(talip3.getSummary());
+
+
+console.log(talip3);
+console.log(talip3.age)
