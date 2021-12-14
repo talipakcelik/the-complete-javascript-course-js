@@ -245,3 +245,73 @@ const talip3 = {
 
 console.log(talip3);
 console.log(talip3.age)
+
+
+/***************************
+ *****046 loop****
+ ***************************/
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log("tekrar sayısı 1")
+}
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`tekrar sayısı ${rep}`)
+}
+
+
+/***************************
+ *****047 Looping Arrays, Breaking and Continuing****
+ ***************************/
+
+const birisi = [
+  "ali",
+  "veli",
+  2021 - 1992,
+  "doktor",
+  ["remzi", "rifat", "reha"],
+]
+
+for (let i = 0; i < birisi.length; i++) {
+  console.log(birisi[i])
+}
+
+// böyle yazarsam ali'yi 5 kere yazdırıyor. 
+
+
+
+
+const birisi2 = [
+  "ali",
+  "veli",
+  2021 - 1992,
+  "doktor",
+  ["remzi", "rifat", "reha"],
+  true
+]
+
+types = [];
+
+for (let i = 0; i < birisi2.length; i++) {
+  console.log(birisi2[i], typeof birisi2[i]);
+
+  types[i] = typeof birisi2[i]
+}
+console.log(types)
+
+
+const yillar = [1985, 1995, 1972, 1994, 1989];
+const yaslar = [];
+
+for (let i = 0; i < yillar.length; i++) {
+  yaslar.push(2021 - yillar[i]);
+}
+
+console.log(yaslar)
+
+
+for (let i = 0; i < birisi.length; i++) {
+  if (typeof birisi[i] !== "string") continue;
+
+  console.log(birisi[i], typeof birisi[i])
+}
