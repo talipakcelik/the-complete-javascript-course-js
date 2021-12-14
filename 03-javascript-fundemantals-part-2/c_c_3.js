@@ -29,7 +29,7 @@ const john = {
   mass: 92,
   height: 1.95,
   calcBMI: function () {
-    return this.BMI = Number(this.mass / (this.height * this.height));
+    return this.BMI = this.mass / (this.height * this.height);
   },
 };
 
@@ -38,7 +38,7 @@ console.log(mark.calcBMI(), john.calcBMI())
 
 // aşağıdakinde mark.calcBMI ve john.calcBMI olduğu için çalışmadı. mark
 
-if (parseInt(mark.BMI) > parseInt(john.BMI)) {
+if (mark.BMI > john.BMI) {
   console.log(`${mark.fullName}ın (${mark.BMI}) Vücut Kitle Endeksi ${john.fullName}'inkinden (${john.BMI}) daha yüksek.`);
 } else {
   console.log(`${john.fullName}in (${john.BMI}) Vücut Kitle Endeksi ${mark.fullName}'ınkinden (${mark.BMI}) daha yüksek.`);
