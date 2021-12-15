@@ -333,3 +333,37 @@ for (let egzersiz = 1; egzersiz < 4; egzersiz++) {
     console.log(`egzersiz ${egzersiz}: ağırlık ${tekrar} kaldırıldı.`)
   }
 }
+
+/***************************
+ *****049****
+ ***************************/
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`tekrar sayısı ${rep}`)
+}
+
+
+
+let rep = 1;
+while (rep <= 10) {
+  console.log(`WHILE: tekrar sayısı ${rep}`);
+  rep++;
+}
+
+
+///
+
+let zar = Math.trunc(Math.random() * 6) + 1;
+
+while (zar != 6) {
+  console.log(`${zar} attınız.`)
+  zar = Math.trunc(Math.random() * 6) + 1;
+  if (zar === 6) console.log(`Loop durduruluyor. ${zar} geldi.`);
+}
+
+
+
+
+
+
+
