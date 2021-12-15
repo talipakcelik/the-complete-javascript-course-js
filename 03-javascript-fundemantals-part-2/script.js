@@ -315,3 +315,21 @@ for (let i = 0; i < birisi.length; i++) {
 
   console.log(birisi[i], typeof birisi[i])
 }
+
+/***************************
+ *****048****
+ ***************************/
+
+for (let i = birisi.length - 1; i >= 0; i--) {
+  console.log(i, birisi[i]);
+}
+
+//
+
+for (let egzersiz = 1; egzersiz < 4; egzersiz++) {
+  console.log(`-----egzersiz ${egzersiz} başladı.`)
+
+  for (let tekrar = 1; tekrar < 6; tekrar++) {
+    console.log(`egzersiz ${egzersiz}: ağırlık ${tekrar} kaldırıldı.`)
+  }
+}
