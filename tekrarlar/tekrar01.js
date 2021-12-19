@@ -51,3 +51,35 @@ const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
 console.log(bills, tips, total);
+
+/////////////////////////////
+/// Coding Challenge #3/////
+////////////////////////////
+
+markBMI = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    return this.mass / this.height ** 2;
+  },
+};
+
+johnBMI = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    return this.mass / this.height ** 2;
+  },
+};
+
+const winner = function () {
+  return markBMI.calcBMI() > johnBMI.calcBMI()
+    ? console.log(`${markBMI.fullName}'ın (${markBMI.calcBMI()}) 
+  değeri ${johnBMI.fullName}'in (${johnBMI.calcBMI()}) değerinden daha yüksek `)
+    : console.log(`${johnBMI.fullName}'in (${johnBMI.calcBMI()}) 
+  değeri ${
+    markBMI.fullName
+  }'ın (${markBMI.calcBMI()}) değerinden daha yüksek `);
+};
