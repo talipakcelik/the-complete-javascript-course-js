@@ -4,6 +4,8 @@
 
 */
 
+"use strict";
+
 const calcAverage = (s1, s2, s3) => (s1 + s2 + s3) / 3;
 
 let ortDolphins = calcAverage(44, 23, 71);
@@ -56,7 +58,7 @@ console.log(bills, tips, total);
 /// Coding Challenge #3/////
 ////////////////////////////
 
-markBMI = {
+const markBMI = {
   fullName: "Mark Miller",
   mass: 78,
   height: 1.69,
@@ -65,7 +67,7 @@ markBMI = {
   },
 };
 
-johnBMI = {
+const johnBMI = {
   fullName: "John Smith",
   mass: 92,
   height: 1.95,
@@ -134,4 +136,24 @@ const printForecast = function (arr) {
   console.log("..." + str);
 };
 
-console.log(printForecast([12, 5, -5, 0, 4]));
+///////////////////////////////////////////
+/// Using Google, StackOverflow and MDN////
+///////////////////////////////////////////
+const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+
+const sicaklikHesapla = function (arr) {
+  let max = arr[0];
+  let min = arr[0];
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] > max && typeof arr[i] !== "string") {
+      max = arr[i];
+    }
+    if (arr[i] < min && typeof arr[i] !== "string") {
+      min = arr[i];
+    }
+  }
+  console.log(max, min);
+  return max - min;
+};
+
+console.log(sicaklikHesapla([3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5]));
