@@ -120,3 +120,18 @@ const calcAverage2 = function (arr) {
 };
 
 console.log(calcAverage2(total2));
+
+//////////////////////////////////
+/// Developer Skills & Editor Setup////
+/// Coding Challenge #1/////
+////////////////////////////
+
+const printForecast = function (arr) {
+  let str = "";
+  for (i = 0; i < arr.length; i++) {
+    str = str + ` ${i + 1}. gün ${arr[i]} derece ...`;
+  }
+  console.log("..." + str);
+};
+
+console.log(printForecast([12, 5, -5, 0, 4]));
