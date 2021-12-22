@@ -21,10 +21,12 @@ document.querySelector('.check').addEventListener('click', function () {
 
   /// tahmin yapılmadığı zaman
   if (!guess) {
-    document.querySelector('.message').textContent = '❌ Sayı girilmedi';
+    displayMessage('❌ Sayı girilmedi');
+    // document.querySelector('.message').textContent = '❌ Sayı girilmedi';
     /// oyuncu kazandığı zaman
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = '🎉 Doğru Sayı ';
+    displayMessage('🎉 Doğru Sayı');
+    // document.querySelector('.message').textContent = '🎉 Doğru Sayı ';
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
     document.querySelector('.number').textContent = secretNumber;
@@ -34,33 +36,51 @@ document.querySelector('.check').addEventListener('click', function () {
       highscore = score;
       document.querySelector('.highscore').textContent = highscore;
     }
-    /// tahmin yüksek olduğu zaman
-  } else if (guess > secretNumber) {
+    /// tahmin tutmadığı zaman
+  } else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = '📈 Çok yüksek ';
+      // document.querySelector('.message').textContent =
+      //   guess > secretNumber ? '📈 Çok yüksek ' : '📉 Çok düşük ';
+      displayMessage(guess > secretNumber ? '📈 Çok yüksek ' : '📉 Çok düşük ');
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      document.querySelector('.message').textContent = ' 💥 Oyunu kaybettiniz ';
-      document.querySelector('.score').textContent = 0;
-    }
-    /// tahmin düşük olduğu zaman
-  } else if (guess < secretNumber) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = '📉 Çok düşük ';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = ' 💥 Oyunu kaybettiniz ';
+      displayMessage('💥 Oyunu kaybettiniz ');
+      // document.querySelector('.message').textContent = ' 💥 Oyunu kaybettiniz ';
       document.querySelector('.score').textContent = 0;
     }
   }
+  /// tahmin yüksek olduğu zaman
+  // } else if (guess > secretNumber) {
+  //   if (score > 1) {
+  //     document.querySelector('.message').textContent = '📈 Çok yüksek ';
+  //     score--;
+  //     document.querySelector('.score').textContent = score;
+  //   } else {
+  //     document.querySelector('.message').textContent = ' 💥 Oyunu kaybettiniz ';
+  //     document.querySelector('.score').textContent = 0;
+  //   }
+  //   /// tahmin düşük olduğu zaman
+  // } else if (guess < secretNumber) {
+  //   if (score > 1) {
+  //     document.querySelector('.message').textContent = '📉 Çok düşük ';
+  //     score--;
+  //     document.querySelector('.score').textContent = score;
+  //   } else {
+  //     document.querySelector('.message').textContent = ' 💥 Oyunu kaybettiniz ';
+  //     document.querySelector('.score').textContent = 0;
+  //   }
+  // }
 });
+
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
 
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
-  document.querySelector('.message').textContent = 'Start guessing...';
+  displayMessage('Start guessing...');
   document.querySelector('.score').textContent = score;
   document.querySelector('.guess').value = '';
   document.querySelector('body').style.backgroundColor = '#222';
