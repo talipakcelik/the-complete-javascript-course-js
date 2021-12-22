@@ -10,10 +10,11 @@
 
 /////073 Handling Click Events
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1; // Math.trunc(Math.random() * 21) neden olmasın.
-document.querySelector('.number').textContent = secretNumber;
+let secretNumber = Math.trunc(Math.random() * 20) + 1; // Math.trunc(Math.random() * 21) neden olmasın.
 
 let score = 20; // başlangıç değeri
+let highscore = 0;
+
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
@@ -26,7 +27,13 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = '🎉 Doğru Sayı ';
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
+    document.querySelector('.number').textContent = secretNumber;
 
+    ///
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
     /// tahmin yüksek olduğu zaman
   } else if (guess > secretNumber) {
     if (score > 1) {
@@ -48,4 +55,15 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
   }
+});
+
+document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.guess').value = '';
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
+  document.querySelector('.number').textContent = '?';
 });
