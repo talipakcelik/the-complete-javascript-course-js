@@ -12,15 +12,26 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-/// Koşulları sağlama
-score0El.textContent = 0;
-score1El.textContent = 0;
-diceEl.classList.add('hidden');
+let scores, currentScore, activePlayer, playing;
+/// Başlangıç koşullarını sağlama
+const init = function () {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+
+  diceEl.classList.add('hidden');
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+};
+init();
 
 const switchPlayer = function () {
   // sayı 1 gelirse geçişten önceki oyuncunun skoru 0 olsun
@@ -69,7 +80,7 @@ btnHold.addEventListener('click', function () {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
     // 2. if oyuncunun skoru >= 100, kontrol et
-    if (scores[activePlayer] >= 25) {
+    if (scores[activePlayer] >= 100) {
       // 2.1. oyunu bitir
       playing = false;
       diceEl.classList.add('hidden');
@@ -86,6 +97,25 @@ btnHold.addEventListener('click', function () {
     }
   }
 });
+
+btnNew.addEventListener('click', init);
+// current0El.textContent = 0;
+// current1El.textContent = 0;
+// score0El.textContent = 0;
+// score1El.textContent = 0;
+// player0El.classList.remove('player--winner');
+// player1El.classList.remove('player--winner');
+// player0El.classList.add('player--active');
+// player1El.classList.remove('player--active');
+// document.getElementById(`current--0`).textContent = 0;
+// document.getElementById(`current--1`).textContent = 0;
+// document.getElementById(`score--0`).textContent = 0;
+// document.getElementById(`score--1`).textContent = 0;
+// document.querySelector(`.player--0`).classList.remove('player--winner');
+// document.querySelector(`.player--1`).classList.remove('player--winner');
+// document.querySelector(`.player--0`).classList.add('player--active');
+// document.querySelector(`.player--1`).classList.remove('player--active');
+
 /***************************/
 //////////el yapımı/////////
 /***************************/
