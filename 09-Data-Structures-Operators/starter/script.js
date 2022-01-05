@@ -126,7 +126,7 @@ const restaurant4 = {
     `);
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(
       `Pastanızın içeriği isteğinize göre şu şekilde: ${ing1}, ${ing2}, ${ing3}`
     );
@@ -240,3 +240,21 @@ for (const item of menu3) console.log(item);
 for (const item of menu3.entries()) {
   console.log(item);
 }
+
+// enhanced obj literal
+const hafta = ['pzt', 'sali', 'crşmba', 'prşmbe', 'cuma'];
+
+const openingHours2 = {
+  [hafta[1]]: {
+    open: 12,
+    close: 22,
+  },
+  [hafta[3]]: {
+    open: 11,
+    close: 23,
+  },
+  [hafta[4]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
