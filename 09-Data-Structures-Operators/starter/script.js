@@ -164,3 +164,29 @@ restaurant4.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
 restaurant4.orderPasta(...ingredients);
 
 const newRestaurant = { foundedIn: 1998, ...restaurant4, founder: 'Guiseppe' };
+
+///////// 106 rest
+
+// SPREAD, because on RIGHT side of =
+const arr2 = [1, 2, ...[3, 4]];
+console.log(arr2);
+
+// REST, because on LEFT side of =
+const [a2, b2, ...others] = [1, 2, 3, 4, 5];
+console.log(a2, b2, others);
+
+//
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant4.mainMenu,
+  ...restaurant4.starterMenu,
+];
+
+const { sat, ...weekdays } = restaurant2.openingHours;
+
+const addArray = function (...numbers) {
+  console.log(numbers);
+};
+
+addArray(2, 3);
+addArray(2, 3, 6, 7, 8);
