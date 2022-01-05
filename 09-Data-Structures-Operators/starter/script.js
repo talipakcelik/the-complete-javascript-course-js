@@ -232,3 +232,11 @@ rest2.numGuests ||= 10;
 
 console.log(rest1);
 console.log(rest2);
+
+// for-of loop
+const menu3 = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu3) console.log(item);
+
+for (const item of menu3.entries()) {
+  console.log(item);
+}
