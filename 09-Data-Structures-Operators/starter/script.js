@@ -125,6 +125,12 @@ const restaurant4 = {
     saat ${time}'da teslim edilecektir.
     `);
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Pastanızın içeriği isteğinize göre şu şekilde: ${ing1}, ${ing2}, ${ing3}`
+    );
+  },
 };
 
 restaurant4.orderDelivery({
@@ -133,3 +139,28 @@ restaurant4.orderDelivery({
   // mainIndex: 2,
   // starterIndex: 2,
 });
+
+/////////////////
+
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+
+const menu2 = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+const ingredients = [
+  // prompt('içinde ne istersiniz (1)?'),
+  // prompt('İçinde ne istersiniz(2)?'),
+  // prompt('İçinde ne istersiniz(3)?'),
+];
+
+restaurant4.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+
+restaurant4.orderPasta(...ingredients);
+
+const newRestaurant = { foundedIn: 1998, ...restaurant4, founder: 'Guiseppe' };
