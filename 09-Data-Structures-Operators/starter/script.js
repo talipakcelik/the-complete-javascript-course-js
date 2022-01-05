@@ -165,7 +165,7 @@ restaurant4.orderPasta(...ingredients);
 
 const newRestaurant = { foundedIn: 1998, ...restaurant4, founder: 'Guiseppe' };
 
-///////// 106 rest
+///////// rest
 
 // SPREAD, because on RIGHT side of =
 const arr2 = [1, 2, ...[3, 4]];
@@ -190,3 +190,18 @@ const addArray = function (...numbers) {
 
 addArray(2, 3);
 addArray(2, 3, 6, 7, 8);
+
+//// short circuiting
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuest || 10;
+console.log(guest2); //10
+
+console.log('Hello' && 12 && null && 'jonas');
+
+restaurant.numGuests2 = 0;
+const guest3 = restaurant.numGuests2 ? restaurant.numGuests2 : 10;
+console.log(guest3);
