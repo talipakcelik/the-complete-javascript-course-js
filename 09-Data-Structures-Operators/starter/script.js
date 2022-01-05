@@ -212,3 +212,23 @@ console.log(guest4); // 10
 restaurant.numGuest3 = 0;
 const guestCorrect = restaurant.numGuest3 ?? 10;
 console.log(guestCorrect); // 0
+
+/// Logical Assignment Operators
+const rest1 = {
+  name: 'Capri',
+  numGuests: 20,
+};
+
+const rest2 = {
+  name: 'La piazza',
+  owner: 'Giovanni Rossi',
+};
+
+rest1.numGuests = rest1.numGuests || 10;
+rest2.numGuests = rest2.numGuests || 10;
+
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+
+console.log(rest1);
+console.log(rest2);
