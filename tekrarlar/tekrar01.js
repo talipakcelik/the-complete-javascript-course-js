@@ -157,19 +157,3 @@ const sicaklikHesapla = function (arr) {
 };
 
 console.log(sicaklikHesapla([3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5]));
-
-const [a, b, c] = [2, 5, 6];
-
-const restaurant = {
-  categories: ["Italian", "Pizzeria", "Vegeterian", "Organic"],
-  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
-  mainMenu: ["Pizza", "Pasta", "Risotto"],
-
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-};
-
-const [first, , second] = restaurant.categories;
-
-const [starter, main] = restaurant.order(2, 0);
