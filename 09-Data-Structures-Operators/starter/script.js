@@ -202,6 +202,13 @@ console.log(guest2); //10
 
 console.log('Hello' && 12 && null && 'jonas');
 
-restaurant.numGuests2 = 0;
-const guest3 = restaurant.numGuests2 ? restaurant.numGuests2 : 10;
-console.log(guest3);
+// restaurant.numGuests2 = 0;
+// const guest3 = restaurant.numGuests2 ? restaurant.numGuests2 : 10;
+// console.log(guest3); // 10
+
+const guest4 = restaurant.numGuests2 || 10;
+console.log(guest4); // 10
+
+restaurant.numGuest3 = 0;
+const guestCorrect = restaurant.numGuest3 ?? 10;
+console.log(guestCorrect); // 0
