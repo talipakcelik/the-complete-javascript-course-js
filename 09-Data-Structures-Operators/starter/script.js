@@ -402,7 +402,107 @@ for (const [key, value] of soru) {
   if (typeof key === 'number') console.log(`Cevap ${key}: ${value}`);
 }
 
-const cevap = Number(prompt('Cevabınız nedir?'));
-console.log(cevap);
+// const cevap = Number(prompt('Cevabınız nedir?'));
+// console.log(cevap);
 
-console.log(soru.get(soru.get('correct') === cevap));
+// console.log(soru.get(soru.get('correct') === cevap));
+
+// working with string
+const airline = 'TAP Air Portugal';
+console.log(airline.slice(0, airline.indexOf(' '))); // TAP
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(typeof new String('jonas')); // object
+console.log(typeof new String('jonas').slice(1)); // string
+
+// fixing capitalization
+
+const yolcu = 'jOnAS'; // Jonas
+const yolcuLowerCase = yolcu.toLowerCase();
+const yolcuCorrect = yolcuLowerCase[0].toUpperCase() + yolcuLowerCase.slice(1);
+console.log(yolcuCorrect);
+
+// comparing emails
+
+const email = 'hello@jonas.io';
+const loginEmail = '     Hello@Jonas.Io \n';
+
+const trimEmail = loginEmail.toLowerCase().trim();
+
+/// replacing
+const duyuru =
+  'Bütün yolcular 23 numaralı kapı önüne. Tekrar ediyorum, 23 numaralı kapı.';
+
+console.log(duyuru.replace('kapı', 'çıkış'));
+console.log(duyuru.replaceAll('kapı', 'çıkış'));
+console.log(duyuru.replaceAll(/kapı/g, 'çıkış'));
+
+/// booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Airb'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('yeni Airbus ailesinin bir parçası');
+}
+
+const bagajKontrol = function (items) {
+  const bagaj = items.toLowerCase();
+  if (bagaj.includes('bıçak') || bagaj.includes('silah')) {
+    console.log('Giriş yapamazsınız!');
+  } else console.log('Hoşgeldiniz');
+};
+
+bagajKontrol('Laptop, Bıçak, ve İçeçiğim var');
+bagajKontrol('çorap ve kamera');
+bagajKontrol('atıştırmalık ve koruma için silah mevcut');
+
+// split method
+console.log('çok+güzel+bir+string'.split('+')); // array içerisine parçaladı
+console.log('Jonas Schmedtmann'.split(' '));
+
+const [firstName, lastName] = 'Talip Akçelik'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+const capitalizeName2 = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName2('jessica ann smith davis'); // Jessia Ann Smith Davis
+
+/// padding
+const message = '23 numaralı otobüs hazır!';
+
+console.log(message.padStart(30, '+').padEnd(40, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+// repeat
+
+const planesInLine = function (n) {
+  console.log(`Havada ${n} uçak var ${'✈'.repeat(n)} `);
+};
+planesInLine(3);
+planesInLine(5);
