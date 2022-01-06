@@ -299,3 +299,44 @@ for (const [day, { open, close }] of entries) {
     `${day} günü ${open} saatinde açığız ve ${close} saatinde kapalıyız.`
   );
 }
+
+//////////// sets
+
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+console.log(new Set('Jonas'));
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear();
+
+const staff = [
+  'Garson',
+  'Şef',
+  'Bulaşıkçı',
+  'Garson',
+  'Garson',
+  'Bulaşıkçı',
+  'Garson',
+];
+
+const staffUnique = new Set(staff);
+console.log(staffUnique); // {'Garson', 'Şef', 'Bulaşıkçı'}
+console.log(staffUnique.size);
+
+const staffUnique2 = [...new Set(staff)];
+console.log(staffUnique2); // ['Garson', 'Şef', 'Bulaşıkçı']
+
+console.log(new Set('jonasschmedtmann').size);
