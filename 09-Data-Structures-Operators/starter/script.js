@@ -258,3 +258,44 @@ const openingHours2 = {
     close: 24,
   },
 };
+
+// optional chaining
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  const open = restaurant2.openingHours[day]?.open ?? 'closed';
+  console.log(`${day} günü ${open} saatinde açığız.`);
+}
+
+const users = [{ name: 'talip', email: 'hello@talip.io' }];
+
+console.log(users[0]?.name ?? 'User array empty');
+
+/////// looping object
+
+for (const day of Object.keys(openingHours)) {
+  console.log(day);
+}
+
+const properties = Object.keys(openingHours);
+console.log(properties); // ['thu', 'fri', 'sat']
+
+let openStr = `${properties.length} gün açığız. `;
+
+for (const day of properties) {
+  openStr += `${day} `;
+}
+
+console.log(openStr);
+
+const values = Object.values(openingHours);
+console.log(values);
+
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [day, { open, close }] of entries) {
+  console.log(
+    `${day} günü ${open} saatinde açığız ve ${close} saatinde kapalıyız.`
+  );
+}
