@@ -340,3 +340,40 @@ const staffUnique2 = [...new Set(staff)];
 console.log(staffUnique2); // ['Garson', 'Şef', 'Bulaşıkçı']
 
 console.log(new Set('jonasschmedtmann').size);
+
+//// maps
+
+const rest = new Map();
+
+rest.set('isim', 'Pidecim');
+rest.set(1, 'Çankaya, Ankara');
+console.log(rest.set(2, 'Keçiören, Ankara'));
+
+rest
+  .set('kategori', ['Kaşarlı', 'Kıymalı', 'Kuşbaşılı', 'Tahinli'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'Açığız')
+  .set(false, 'Kapalıyız');
+
+console.log(rest.get('isim'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+////
+
+const time = 2;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('kategori'));
+rest.delete(2);
+console.log(rest.size);
+rest.clear();
+console.log(rest.size); // 0
+
+const arr3 = [1, 2];
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+
+console.log(rest.get(arr));
+console.log(rest.get(document.querySelector('h1')));
