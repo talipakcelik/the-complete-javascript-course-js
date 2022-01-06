@@ -377,3 +377,32 @@ rest.set(document.querySelector('h1'), 'Heading');
 
 console.log(rest.get(arr));
 console.log(rest.get(document.querySelector('h1')));
+
+//// maps iteration
+
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+//
+
+const soru = new Map([
+  ['soru', 'en iyi prog. dili hangisidir?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 🎉'],
+  [false, "Try again'"],
+]);
+
+// app
+console.log(soru.get('soru'));
+for (const [key, value] of soru) {
+  if (typeof key === 'number') console.log(`Cevap ${key}: ${value}`);
+}
+
+const cevap = Number(prompt('Cevabınız nedir?'));
+console.log(cevap);
+
+console.log(soru.get(soru.get('correct') === cevap));
