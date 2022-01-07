@@ -41,9 +41,60 @@ message.innerHTML =
 // header.prepend(message);
 header.append(message);
 
-//
+// element silme
 document
   .querySelector('.btn--close-cookie')
   .addEventListener('click', function () {
     message.remove();
+    // message.parentElement.removeChild(message); eski yöntem
   });
+
+// styles
+message.style.backgroundColor = '#37383d';
+console.log(message.style.color);
+console.log(message.style.backgroundColor);
+
+console.log(getComputedStyle(message).color);
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt); // Bankist logo
+console.log(logo.className); // nav__logo
+
+console.log(logo.src);
+console.log(logo.getAttribute('src'));
+
+//// Implementing Smooth Scrolling
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+// btnScrollTo.addEventListener('click', function (e) {
+//   const s1coords = section1.getBoundingClientRect();
+//   console.log(s1coords);
+//   console.log(e.target.getBoundingClientRect());
+
+//   console.log('current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
+
+//   console.log(
+//     'height/width viewpoert',
+//     document.documentElement.clientHeight,
+//     document.documentElement.clientWidth
+//   );
+//   // Scrolling
+//   // window.scrollTo(
+//   //   s1coords.left + window.pageXOffset,
+//   //   s1coords.top + window.pageYOffset
+//   // );
+//   // window.scrollTo({
+//   //   left: s1coords.left + window.pageXOffset,
+//   //   top: s1coords.top + window.pageYOffset,
+//   //   behavior: 'smooth',
+//   // });
+//   section1.scrollIntoView({ behavior: 'smooth' });
+// });
+
+btnScrollTo.addEventListener('click', function (e) {
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
