@@ -1,12 +1,13 @@
 'use strict';
-
-///////////////////////////////////////
-// Modal window
-
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+///////////////////////////////////////
+// Modal window
 
 const openModal = function () {
   modal.classList.remove('hidden');
@@ -30,7 +31,37 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-///
+//////////////////////////////////////////////////
+/////// Scrolling
+btnScrollTo.addEventListener('click', function (e) {
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
+//////////////////////////////////////////////////
+/////// Page Navigation
+
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+//     console.log(id);
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // matching / eşleştirme stratejisi
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    console.log(id);
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+/////
+//////
+///////
 const header = document.querySelector('.header');
 const message = document.createElement('div');
 message.classList.add('cookie-message');
@@ -67,9 +98,6 @@ console.log(logo.getAttribute('src'));
 
 //// Implementing Smooth Scrolling
 
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-
 // btnScrollTo.addEventListener('click', function (e) {
 //   const s1coords = section1.getBoundingClientRect();
 //   console.log(s1coords);
@@ -95,6 +123,20 @@ const section1 = document.querySelector('#section--1');
 //   section1.scrollIntoView({ behavior: 'smooth' });
 // });
 
-btnScrollTo.addEventListener('click', function (e) {
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
+/// 189 Types of Events and Event Handlers
+const h1 = document.querySelector('h1');
+
+// h1.addEventListener('mouseenter', function (e) {
+//   alert('addEventListener: Şu an başlığı okuyorsun...');
+// });
+
+// const alertH1 = function (e) {
+//   alert('addEventListener: Şu an başlığı okuyorsun...');
+// };
+
+// h1.addEventListener('mouseenter', alertH1);
+
+// h1.onmouseenter = function (e) {
+//   alert('addEventListener: Şu an başlığı okuyorsun...');
+// };
+//
