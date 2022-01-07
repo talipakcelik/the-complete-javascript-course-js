@@ -124,7 +124,7 @@ console.log(logo.getAttribute('src'));
 // });
 
 /// 189 Types of Events and Event Handlers
-const h1 = document.querySelector('h1');
+// const h1 = document.querySelector('h1');
 
 // h1.addEventListener('mouseenter', function (e) {
 //   alert('addEventListener: Şu an başlığı okuyorsun...');
@@ -140,3 +140,38 @@ const h1 = document.querySelector('h1');
 //   alert('addEventListener: Şu an başlığı okuyorsun...');
 // };
 //
+
+const h1 = document.querySelector('h1');
+
+// aşağıya gitme / going downwards
+
+console.log(h1.querySelectorAll('.highlight'));
+console.log(h1.childNodes);
+
+// yukarı gitme / going upwards
+console.log(h1.parentNode);
+console.log(h1.parentElement);
+
+/// tabbed component
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+
+  // guard close
+  if (!clicked) return;
+
+  // remove active classes
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+
+  // active tabs, content
+  console.log(clicked.dataset.tab);
+  clicked.classList.add('operations__tab--active');
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add('operations__content--active');
+});
