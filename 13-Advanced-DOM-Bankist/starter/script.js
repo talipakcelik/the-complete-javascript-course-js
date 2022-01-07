@@ -31,7 +31,19 @@ document.addEventListener('keydown', function (e) {
 });
 
 ///
-const message = document.createElement("div");
-message.classList.add("cookie-message");
-message.innerHTML = "We use cookied for imprevoed functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>";
+const header = document.querySelector('.header');
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+// message.textContent =
+//   "'We use cookied for imprevoed functionality and analytics.";
+message.innerHTML =
+  'We use cookied for imprevoed functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
+// header.prepend(message);
+header.append(message);
 
+//
+document
+  .querySelector('.btn--close-cookie')
+  .addEventListener('click', function () {
+    message.remove();
+  });
