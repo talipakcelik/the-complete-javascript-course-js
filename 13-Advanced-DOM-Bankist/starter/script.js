@@ -5,6 +5,9 @@ const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
 
 ///////////////////////////////////////
 // Modal window
@@ -153,9 +156,6 @@ console.log(h1.parentNode);
 console.log(h1.parentElement);
 
 /// tabbed component
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
 
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
@@ -174,4 +174,39 @@ tabsContainer.addEventListener('click', function (e) {
   document
     .querySelector(`.operations__content--${clicked.dataset.tab}`)
     .classList.add('operations__content--active');
+});
+
+// menu fade animation
+const nav = document.querySelector('.nav');
+
+const handleHover = function (e, opacity) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = opacity;
+    });
+    logo.style.opacity = opacity;
+  }
+};
+
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+
+nav.addEventListener('mouseout', function (e) {
+  handleHover(e, 1);
+});
+
+//// Implementing a Sticky Navigation The Scroll Event
+
+const initialCoords = section1.getBoundingClientRect();
+
+console.log(initialCoords);
+
+window.addEventListener('scroll', function () {
+  console.log(window.scrollY);
+
+  if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
 });
