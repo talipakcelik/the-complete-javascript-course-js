@@ -38,3 +38,20 @@ Array.prototype.unique = function () {
 };
 
 console.log(arr.unique());
+
+/// class
+// const PersonCl = class {};
+
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.isim = firstName;
+    this.dogumYili = birthYear;
+  }
+
+  calcAge() {
+    console.log(2037 - this.dogumYili);
+  }
+}
+
+const jessica = new PersonCl('Jessica', 1996);
+console.log(jessica);
