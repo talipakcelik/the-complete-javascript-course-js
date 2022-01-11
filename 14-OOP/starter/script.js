@@ -42,6 +42,41 @@ console.log(arr.unique());
 /// class
 // const PersonCl = class {};
 
+// class PersonCl {
+//   constructor(firstName, birthYear) {
+//     this.isim = firstName;
+//     this.dogumYili = birthYear;
+//   }
+
+//   calcAge() {
+//     console.log(2037 - this.dogumYili);
+//   }
+// }
+
+// const jessica = new PersonCl('Jessica', 1996);
+// console.log(jessica);
+
+// getter and setter
+
+const account = {
+  owner: 'Jonas',
+  movements: [200, 520, 145, 875],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+
+console.log(account.latest);
+
+// account.latest(55) değil
+account.latest = 55;
+console.log(account.movements);
+
 class PersonCl {
   constructor(firstName, birthYear) {
     this.isim = firstName;
@@ -51,7 +86,19 @@ class PersonCl {
   calcAge() {
     console.log(2037 - this.dogumYili);
   }
+
+  set isim(name) {
+    console.log(name);
+    if (name.includes(' ')) this._isim = name;
+    else alert(`${name} is not a full name!`);
+  }
+
+  get isim() {
+    return this._isim;
+  }
 }
 
-const jessica = new PersonCl('Jessica', 1996);
+const jessica = new PersonCl('Jessica Alan', 1996);
 console.log(jessica);
+const walter = new PersonCl('Walter', 1854);
+console.log(walter);
