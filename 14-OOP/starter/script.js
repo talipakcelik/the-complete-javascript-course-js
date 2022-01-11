@@ -28,3 +28,13 @@ console.log(Person.prototype.isPrototypeOf(Person));
 Person.prototype.species = 'Homo Sapiens';
 console.log(jonas, jonas.species);
 console.log(jonas.hasOwnProperty('species'));
+
+const arr = [3, 6, 4, 4, 2, 2, 1, 4, 5, 6];
+console.log(arr.__proto__);
+console.log((arr.__proto__ = Array.prototype));
+
+Array.prototype.unique = function () {
+  return [...new Set(this)];
+};
+
+console.log(arr.unique());
