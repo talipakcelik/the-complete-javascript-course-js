@@ -100,5 +100,34 @@ class PersonCl {
 
 const jessica = new PersonCl('Jessica Alan', 1996);
 console.log(jessica);
-const walter = new PersonCl('Walter', 1854);
+const walter = new PersonCl('Walter aa', 1854);
 console.log(walter);
+
+/// Object.creat()
+const PersonProto = {
+  calcAge() {
+    console.log(2037 - this.dogumYili);
+  },
+};
+
+const steven = Object.create(PersonProto);
+console.log(steven);
+steven.isim = 'Steven';
+steven.dogumYili = '2002';
+console.log(steven);
+
+console.log(steven.__proto__ === PersonProto);
+
+const PersonProto2 = {
+  calcAge() {
+    console.log(2037 - this.dogumYili);
+  },
+
+  init(firstName, birthYear) {
+    (this.isim = firstName), (this.dogumYili = birthYear);
+  },
+};
+
+const sarah = Object.create(PersonProto2);
+sarah.init('Sarah', 2004);
+console.log(sarah);
